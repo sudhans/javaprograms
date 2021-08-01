@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * Find if the given string has duplicate characters
+ * Eg: apple has letter p occurring twice and considered to have duplicate characters
  */
 public class DuplicateCharacterInStrings {
     public static void main(String[] args) {
@@ -20,9 +21,12 @@ public class DuplicateCharacterInStrings {
     }
 
     private static boolean hasDuplicateChars(String input) {
-        Map<Character, Long> characterMap = input.chars().mapToObj(c -> (char) c)
+        Map<Character, Long> characterMap = input.chars()
+                .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
-        return characterMap.values().stream().filter(count -> count > 1).count() > 1;
+        return characterMap.values().stream()
+                .filter(count -> count > 1)
+                .count() > 1;
     }
 
     private static boolean hasDuplicateCharsByDistinct(String input) {
