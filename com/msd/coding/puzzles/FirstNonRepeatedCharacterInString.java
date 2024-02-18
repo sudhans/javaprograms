@@ -13,10 +13,16 @@ import java.util.stream.Collectors;
 public class FirstNonRepeatedCharacterInString {
     public static void main(String[] args) {
         String input1 = "apple";
-        String input2 = "aarrgh";
+        String input2 = "aarr";
 
         System.out.println("1. First Non Repeated character :: " + firstNonRepeatedCharacter(input1));
-        System.out.println("2. First Non Repeated character :: " + firstNonRepeatedCharacterWithStreams(input2));
+        System.out.println("2. First Non Repeated character :: " + firstNonRepeatedCharacter(input2));
+
+        System.out.println("1. First Non Repeated character with Streams :: " + firstNonRepeatedCharacterWithStreams(input1));
+        System.out.println("2. First Non Repeated character with streams :: " + firstNonRepeatedCharacterWithStreams(input2));
+
+        System.out.println("1. First Non Repeated character using string index :: " + firstNonRepeatedCharacterUsingStringIndex(input1));
+        System.out.println("2. First Non Repeated character using string index :: " + firstNonRepeatedCharacterUsingStringIndex(input2));
     }
 
     private static char firstNonRepeatedCharacter(String input){
@@ -44,5 +50,9 @@ public class FirstNonRepeatedCharacterInString {
                 .map(Map.Entry::getKey)
                 .orElse(Character.MIN_VALUE);
 
+    }
+
+    private static char firstNonRepeatedCharacterUsingStringIndex (String input) {
+        return input.chars().mapToObj(c -> (char) c).filter(c -> input.indexOf(c) == input.lastIndexOf(c)).findFirst().orElse(' ');
     }
 }
