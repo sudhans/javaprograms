@@ -1,4 +1,4 @@
-package src.com.msd.coding.puzzles;
+package com.msd.coding.puzzles;
 
 // Move Backward: If cell i-1 exists and contains a , you can walk back to cell i-1
 

@@ -1,4 +1,4 @@
-package src.com.msd.coding.puzzles;
+package com.msd.coding.puzzles;
 
 import java.util.Arrays;
 

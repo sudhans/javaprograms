@@ -1,4 +1,4 @@
-package src.com.msd.coding.puzzles;
+package com.msd.coding.puzzles;
 
 // Zero represents empty cells.
 // one or more zeros will make the solution invalid
